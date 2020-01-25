@@ -1,3 +1,28 @@
-<p>
-  project-details works!
-</p>
+<mat-card style="margin: auto; width: 50%; position: relative; left: 0; ">
+    <mat-card-header style="margin: auto; width: 100%;">
+        Project header goes here
+    </mat-card-header>
+    <mat-card-content style="width: 100%">
+        <img class="d-flex flex-grow-1 project-image align-items-center justify-content-center" src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" width="100%">
+        <div class="description">nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
+    </mat-card-content>
+</mat-card>
+<form [formGroup]="Volunteer">
+    <div id="form" style="margin: 20px 0;">
+        <h1>Please fill in the required information:</h1>
+        <label>When can you start?</label>
+        <input matInput [matDatepicker]="picker2 " required>
+        <mat-datepicker-toggle matSuffix [for]="picker2 "></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary "></mat-datepicker>
+        <label>Email Address</label>
+        <input type="email" formControlName="email" placeholder="Email">
+        <label>Phone Number</label>
+        <input type="text" formControlName="phoneNumber" placeholder="Phone Number">
+        <label>Tell us about yourself</label>
+        <textarea style="width: 300px; margin-bottom: 18px;"></textarea>
+        <label>Please Submit a copy of your resume</label>
+
+        <input type="file" style="width: 300px;">
+        <button class="button" type="submit">Volunteer!</button>
+    </div>
+</form>
