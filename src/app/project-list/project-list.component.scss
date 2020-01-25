@@ -21,3 +21,11 @@ mat-card {
 .mat-button-focus-overlay {
   opacity: 0 !important;
 }
+
+.xmark {
+  display: inline;
+  padding: 0;
+  margin-left: 0.3em;
+  background: none;
+  color: red;
+}
