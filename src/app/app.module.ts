@@ -5,15 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-<<<<<<< HEAD
-import { ProjectListComponent } from './project-list/project-list.component';
-import { ProfileComponent } from './profile/profile.component';
-=======
 import { ProjectListComponent } from './project-list/project-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MaterialModule } from './material/modules/material/material.module';
->>>>>>> 20a559df7d4a1c89b3a04e53fa6e9616cc6c2506
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
