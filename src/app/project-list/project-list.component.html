@@ -1,30 +1,18 @@
-<br/>
+<br />
 <h2>Welcome to Volunteer Me!</h2>
 
-<h3> Why Volunteer Me ? </h3>
-<ol>
-    <li> Doing good feels good! </li>
-    <li> Giving back to mother earth and protect her </li>
-    <li> We love hackathons and giving back to the community </li>
-</ol>
-
 <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
-    <mat-card class="example-card" [routerLink]="['/project-details']">
+    <mat-card class="project-card" *ngFor="let item of projects" [routerLink]="['/project-details']">
         <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Project title</mat-card-title>
+            <mat-card-title>{{item.title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="'../../assets/placeholder.png'">
+        <img mat-card-image class="project-image" src={{item.image}}>
         <mat-card-content>
-            <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-            </p>
+            <p> {{item.description}} </p>
         </mat-card-content>
         <mat-card-actions>
-            <button class="btn-not-btn" mat-button>2 months ago</button>
-            <button class="btn-not-btn" mat-button>20 volunteers needed</button>
+            <button mat-button class="btn-not-btn">{{item.date}}</button>
+            <button mat-button class="btn-not-btn">{{item.numberOfVolunteers}} volunteers needed</button>
         </mat-card-actions>
     </mat-card>
 </div>

@@ -2,33 +2,22 @@
   width: 100%;
 }
 
-.project-image {
-  max-width: 350px;
-  max-height: 350px;
-  min-width: 300px;
-  min-height: 300px;
-}
-
-.description {
-}
-
 mat-card {
   margin: 20px;
 }
 
-.example-card {
+.project-card {
   max-width: 400px;
-}
-
-.example-header-image {
-  background-image: url("../../assets/placeholder.png");
-  background-size: cover;
+  .project-image {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .btn-not-btn {
   cursor: auto;
 }
 
-.mat-button:hover .mat-button-focus-overlay, .mat-stroked-button:hover .mat-button-focus-overlay {
+.mat-button-focus-overlay {
   opacity: 0 !important;
 }
