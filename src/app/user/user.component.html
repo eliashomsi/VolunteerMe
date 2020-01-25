@@ -1,72 +1,50 @@
-<!-- <nav class="navbar navbar-default navbar-static-top navbar-inverse">
-  <div class="container">
-    <a (click)="logout()" class="navbar-text navbar-right navbar-link">Logout</a>
-  </div>
-</nav>
-
-<h1 class="header">Logged User Page</h1>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top image" [src]="user.image" *ngIf="user.image" alt="User image">
-      <img class="card-img-top image" src="https://via.placeholder.com/400x300" *ngIf="!user.image" alt="User image">
-      <div *ngIf='user.provider != "password"'class="card-body">
-        <h4 class="card-title">{{user.name}}</h4>
-        <p class="card-text">This is an example of Social Authentication using Firebase in an Angular 7 web app. </p>
-      </div>
-      <div *ngIf='user.provider == "password"'class="card-body">
-        <form [formGroup]="profileForm">
-          <div class="form-group">
-            <label>Your name</label>
-            <input type="text" formControlName="name" class="form-control" required>
-          </div>
-        </form>
-        <a (click)="save(profileForm.value)" class="btn btn-primary">Save</a>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-<div class=" d-flex flex-grow-1">
-	<div class="row d-flex justify-content-center">
-		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-    	 <div class="well profile">
-            <div class="col-sm-12">
-                <div class="col-xs-12 col-sm-8">
-                    <h2>Nicole Pearson</h2>
-                    <p><strong>About: </strong> Web Designer / UI. </p>
-                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                    
-                    <p class="d-flex flex-row flex-wrap">
-                        <strong>Skills: </strong>
-                        <span class="tag1 m-1">java</span> 
-                        <span class="tags m-1">nancy</span>
-                        <span class="tags m-1">jquery</span>
-                        <span class="tags m-1">bootstrap3</span>
-                        
-                    </p>
-                </div>             
-                <div class="col-xs-12 col-sm-4 text-center">
-                    <figure>
-                        <img *ngIf="!user.image" src="../../assets/user-male-icon.png" alt="" class="img-circle img-responsive">
-                        <img *ngIf="user.image" [src]="user.image" alt="profile pict" class="img-circle img-responsive">
-                    </figure>
-                </div>
-            </div>            
-       </div> 
-       <mat-list>
-        <mat-list-item>Name: {{ user?.name }}</mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item>Email address: </mat-list-item>
-      </mat-list>          
-		</div>
-	</div>
+
+<div class="d-flex flex-grow-1 justify-content-end">
+  <button *ngIf="!editState" mat-button (click)="logout()" matTooltip="Log out">
+    <mat-icon>
+      exit_to_app
+    </mat-icon>
+  </button>
+  <button mat-button (click)="openDialog(user)" matTooltip="Edit">
+    <mat-icon>
+      edit
+    </mat-icon>
+  </button>
 </div>
 
+<div class=" d-flex flex-grow-1">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+      <div class="well profile">
+        <div class="col-sm-12">
+          <div class="col-xs-12 col-sm-8">
+            <h2>{{ user.name }}</h2>
+            <p><strong>About: </strong> Web Designer / UI. </p>
+            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+
+            <p class="d-flex flex-row flex-wrap">
+              <strong>Skills: </strong>
+              <span class="tag1 m-1">java</span>
+              <span class="tags m-1">nancy</span>
+              <span class="tags m-1">jquery</span>
+              <span class="tags m-1">bootstrap3</span>
+            </p>
+          </div>
+          <div class="col-xs-12 col-sm-4 text-center">
+            <figure>
+              <img *ngIf="!user.image" src="../../assets/user-male-icon.png" alt="" class="img-circle img-responsive">
+              <img *ngIf="user.image" [src]="user.image" alt="profile pict" class="img-circle img-responsive">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
