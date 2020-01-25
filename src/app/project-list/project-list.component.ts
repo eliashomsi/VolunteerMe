@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { projects } from '../projects';
+import { projects } from '../sampleData/projects';
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.css']
+  styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent {
   projects = projects;
