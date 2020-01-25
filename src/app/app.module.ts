@@ -9,6 +9,7 @@ import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule} from '@angular/fire/database';
 
 // User
 import { UserResolver } from './user/user.resolver';
@@ -31,7 +32,6 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 
-
 // font-awesome 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
@@ -39,14 +39,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    MatCardModule,    
+    MatCardModule,
     MaterialModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   declarations: [
     AppComponent,
@@ -61,6 +62,5 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
-
-
