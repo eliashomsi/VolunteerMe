@@ -14,16 +14,42 @@ export class ProjectListComponent {
   public projectsRef: AngularFireList<ProjectModel>;
   public projects$: Observable<ProjectModel[]>;
   public projects: ProjectModel[];
+  public FilterTags: string[];
+  public db: AngularFireDatabase;
+  public FilterInput: string;
 
-  constructor(db: AngularFireDatabase) {
-    this.projectsRef = db.list('/projects');
+  public changeInput(event) {
+    this.FilterTags.push(event.target.value);
+    event.target.value = "";
+    this.renderWithFilters();
+  }
+
+  removeFilter(event) {
+    this.FilterTags = this.FilterTags.filter(item => item != event.target.name);
+    this.renderWithFilters();
+  }
+
+  renderWithFilters() {
+    this.projectsRef = this.db.list('/projects');
     this.projects$ = this.projectsRef.snapshotChanges().pipe(
       map(changes => 
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
     );
 
-    this.projects$.subscribe(result => {this.projects = result; console.log(this.projects)});
+    this.projects$.subscribe(result => {
+      if(this.FilterTags.length == 0){
+        this.projects = result;
+      }else {
+        this.projects = result.filter(item => item.tags.some(r=> this.FilterTags.includes(r)));
+      }
+    });
+  }
+
+  constructor(db: AngularFireDatabase) {
+    this.db = db;
+    this.FilterTags = [];
+    this.renderWithFilters();
   }
 }
 
