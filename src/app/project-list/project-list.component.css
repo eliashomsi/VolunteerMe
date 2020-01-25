@@ -1,2 +1,14 @@
+.project-image {
+    width: 350px;
+    height: 350px;
+}
 
+.description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
+mat-card {
+    margin: 20px;
+}
