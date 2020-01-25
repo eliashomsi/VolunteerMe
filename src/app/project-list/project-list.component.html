@@ -8,25 +8,22 @@
 </ol>
 
 <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
-    <mat-card [routerLink]="'project-details'">
+    <mat-card class="example-card" [routerLink]="['project-details']">
         <mat-card-header>
-            Project header goes here
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Project title</mat-card-title>
         </mat-card-header>
-        <mat-card-content style="width: 400px">
-            <div class="description">nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
-            <img class="d-flex flex-grow-1 project-image" [src]="'../../assets/placeholder.png'">
+        <img mat-card-image [src]="'../../assets/placeholder.png'">
+        <mat-card-content>
+            <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+            </p>
         </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-        <mat-card-header>
-            Project header goes here
-        </mat-card-header>
-        <mat-card-content style="width: 400px">
-            <div class="description">ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
-            <img class="d-flex flex-grow-1 project-image" [src]="'../../assets/placeholder.png'">
-        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>2 months ago</button>
+            <button mat-button>20 volunteers needed</button>
+        </mat-card-actions>
     </mat-card>
 </div>

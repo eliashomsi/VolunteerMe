@@ -1,17 +1,26 @@
 :host {
-    width: 100%;
+  width: 100%;
 }
 
 .project-image {
-    max-width: 350px;
-    max-height: 350px;
-    min-width: 300px;
-    min-height: 300px;
+  max-width: 350px;
+  max-height: 350px;
+  min-width: 300px;
+  min-height: 300px;
 }
 
 .description {
 }
 
 mat-card {
-    margin: 20px;
+  margin: 20px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("../../assets/placeholder.png");
+  background-size: cover;
 }
