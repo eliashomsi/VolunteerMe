@@ -24,9 +24,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
 import { MaterialModule } from './material/modules/material/material.module';
-import { ProfileComponent } from './profile/profile.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -39,7 +37,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    MatCardModule,
     MaterialModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
@@ -53,7 +50,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     AppComponent,
     TopBarComponent,
     ProjectListComponent,
-    ProfileComponent,
     ProjectDetailsComponent,
     LoginComponent,
     UserComponent,

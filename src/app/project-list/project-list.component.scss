@@ -1,17 +1,23 @@
 :host {
-    width: 100%;
-}
-
-.project-image {
-    max-width: 350px;
-    max-height: 350px;
-    min-width: 300px;
-    min-height: 300px;
-}
-
-.description {
+  width: 100%;
 }
 
 mat-card {
-    margin: 20px;
+  margin: 20px;
+}
+
+.project-card {
+  max-width: 400px;
+  .project-image {
+    // width: 300px;
+    height: 300px;
+  }
+}
+
+.btn-not-btn {
+  cursor: auto;
+}
+
+.mat-button-focus-overlay {
+  opacity: 0 !important;
 }
