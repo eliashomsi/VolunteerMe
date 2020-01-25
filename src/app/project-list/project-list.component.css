@@ -5,6 +5,8 @@
 .project-image {
     max-width: 350px;
     max-height: 350px;
+    min-width: 300px;
+    min-height: 300px;
 }
 
 .description {
