@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MaterialModule } from './material/modules/material/material.module';
 import { ProfileComponent } from './profile/profile.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
     MaterialModule,
     RouterModule.forRoot([
       { path: '', component: ProjectListComponent },
+      { path: 'project-details', component: ProjectDetailsComponent },
     ]),
     BrowserAnimationsModule
   ],
@@ -26,7 +28,8 @@ import { ProfileComponent } from './profile/profile.component';
     AppComponent,
     TopBarComponent,
     ProjectListComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProjectDetailsComponent
   ],
   bootstrap: [ AppComponent ]
 })

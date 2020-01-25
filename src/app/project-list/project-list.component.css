@@ -1,12 +1,13 @@
+:host {
+    width: 100%;
+}
+
 .project-image {
-    width: 350px;
-    height: 350px;
+    max-width: 350px;
+    max-height: 350px;
 }
 
 .description {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 mat-card {
