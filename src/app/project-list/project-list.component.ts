@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { projects } from '../sampleData/projects';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { ProjectModel} from '../core/project.model'
 
 @Component({
   selector: 'app-project-list',
@@ -8,10 +9,10 @@ import { projects } from '../sampleData/projects';
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent {
-  projects = projects;
+  public projects: AngularFireList<ProjectModel>;
 
-  share() {
-    window.alert('The project has been shared!');
+  constructor(db: AngularFireDatabase) {
+    this.projects = db.list('/projects');
   }
 }
 
