@@ -13,28 +13,23 @@
           <label class="error">{{errorMessage}}</label>
           <label class="success">{{successMessage}}</label>
         </div>
-        <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register</button>
+        <button type="submit" (click)="tryRegister(registerForm.value)"
+          class="btn btn-success btn-block">Register</button>
       </form>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook</button>
-    </div>
+    <button type="button" class="btn btn-primary mr-2" (click)="tryFacebookLogin()">
+      <fa-icon class="white" [icon]="faFacebook"></fa-icon>
+    </button>
+    <button type="button" class="btn btn-danger mr-2" (click)="tryGoogleLogin()">
+      <fa-icon class="white" [icon]="faGoogle"></fa-icon>
+    </button>
+    <button type="button" class="btn btn-info" (click)="tryTwitterLogin()">
+      <fa-icon class="white" [icon]="faTwitter"></fa-icon>
+    </button>
   </div>
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Register with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Register with Twitter</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>Already have an account? <a href="/login">Login</a></p>
-    </div>
+    <p>Already have an account? <a href="/login">Login</a></p>
   </div>
 </div>

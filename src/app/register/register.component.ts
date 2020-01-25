@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth.service'
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// font-awesome-icons
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-register',
@@ -13,6 +17,10 @@ export class RegisterComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+
+  faFacebook = faFacebookF;
+  faGoogle = faGoogle;
+  faTwitter = faTwitter;
 
   constructor(
     public authService: AuthService,
