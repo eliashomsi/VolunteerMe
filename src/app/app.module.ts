@@ -31,12 +31,17 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 
+
+// font-awesome 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     MatCardModule,    
     MaterialModule,
+    FontAwesomeModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
