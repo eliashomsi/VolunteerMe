@@ -41,7 +41,7 @@ export class ProjectListComponent {
       if(this.FilterTags.length == 0){
         this.projects = result;
       }else {
-        this.projects = result.filter(item => item.tags.some(r=> this.FilterTags.includes(r)));
+        this.projects = result.filter(item => this.FilterTags.every(r=> item.tags.includes(r)));
       }
     });
   }
