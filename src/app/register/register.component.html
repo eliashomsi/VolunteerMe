@@ -1,0 +1,35 @@
+<h1 class="header">Create an account with Firebase or Social Providers</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form [formGroup]="registerForm">
+        <div class="form-group">
+          <label>Email address</label>
+          <input type="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password">
+          <label class="error">{{errorMessage}}</label>
+          <label class="success">{{successMessage}}</label>
+        </div>
+        <button type="submit" (click)="tryRegister(registerForm.value)"
+          class="btn btn-success btn-block">Register</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary mr-2" (click)="tryFacebookLogin()">
+      <fa-icon class="white" [icon]="faFacebook"></fa-icon>
+    </button>
+    <button type="button" class="btn btn-danger mr-2" (click)="tryGoogleLogin()">
+      <fa-icon class="white" [icon]="faGoogle"></fa-icon>
+    </button>
+    <button type="button" class="btn btn-info" (click)="tryTwitterLogin()">
+      <fa-icon class="white" [icon]="faTwitter"></fa-icon>
+    </button>
+  </div>
+  <div class="row">
+    <p>Already have an account? <a href="/login">Login</a></p>
+  </div>
+</div>

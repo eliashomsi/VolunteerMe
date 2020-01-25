@@ -1,3 +1,4 @@
+<br/>
 <h2>Welcome to Volunteer Me!</h2>
 
 <h3> Why Volunteer Me ? </h3>
@@ -7,13 +8,23 @@
     <li> We love hackathons and giving back to the community </li>
 </ol>
 
-<mat-card>
-    <mat-card-content>
-        Header
-    </mat-card-content>
-    <button>
-        <mat-icon>
-            grade
-        </mat-icon>
-    </button>
-</mat-card>
+<br/>
+<br/>
+<h3> Project List </h3>
+
+<div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
+    <mat-card class="example-card" *ngFor="let item of projects; let i = index" [routerLink]="['project-details']">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{item.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{item.image}}>
+        <mat-card-content>
+            <p> {{item.description}} </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>{{item.date}}</button>
+            <button mat-button>{{item.numberOfVolunteers}} volunteers needed</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

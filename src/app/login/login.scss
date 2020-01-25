@@ -1,0 +1,24 @@
+
+:host {
+  width: 100%;
+}
+.header{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .row{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .error{
+    color: red;
+  }
+  
+  .white {
+    color: white !important;
+  }
