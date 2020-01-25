@@ -13,7 +13,7 @@ export class ProjectModel {
     this.description = "MeDoGood";
     this.numberOfVolunteers = 10;
     this.address = "kidnapmestreet 19339";
-    this.date = Date.now();
+    this.date = new Date(Date.now());
     this.phoneNumber = "666-666-6666";
   }
 }
