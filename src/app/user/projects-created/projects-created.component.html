@@ -3,6 +3,8 @@
   <h2 >Create new Project</h2>
 </button>
 
-<div *ngFor="let project of projects">
+<div class="d-flex flex-row flex-wrap justify-content-center">
+  <span *ngFor="let project of projects" style="float: left; width: fit-content;">
     <app-project-card [item]="project" [user]="user" [delete]="true" style="float: left;"></app-project-card>
+  </span>
 </div>
