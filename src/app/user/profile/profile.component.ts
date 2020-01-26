@@ -4,7 +4,7 @@ import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { FirebaseUserModel } from 'src/app/core/user.model';
+import { UserModel } from 'src/app/core/user.model';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: FirebaseUserModel = new FirebaseUserModel();
+  user: UserModel = new UserModel();
   profileForm: FormGroup;
 
   FilterTags = ['java', 'nancy', 'jquery'];
@@ -71,7 +71,7 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  openDialog(user: FirebaseUserModel): void {
+  openDialog(user: UserModel): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: { user: user }
     });
