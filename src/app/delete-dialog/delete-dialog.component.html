@@ -1,0 +1,6 @@
+<h1 mat-card-title>Are you sure you want to delete {{ data?.title }} ?</h1>
+
+<div mat-dialog-actions class="d-flex flex-grow-1 justify-content-end">
+  <button class="mat-warn" mat-button (click)="onSave(false)">Cancel</button>
+  <button class="mat-primary" mat-button [mat-dialog-close]="data.animal" (click)="onSave(true)" cdkFocusInitial>Save</button>
+</div>

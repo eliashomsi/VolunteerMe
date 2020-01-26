@@ -36,7 +36,8 @@ import { EditDialogComponent } from './user/edit-dialog/edit-dialog.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { ProjectsCreatedComponent } from './user/projects-created/projects-created.component';
 import { ProjectsSignedUpForComponent } from './user/projects-signed-up-for/projects-signed-up-for.component';
-import { ProjectCardComponent } from './material/project-card/project-card.component'
+import { ProjectCardComponent } from './material/project-card/project-card.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component'
 
 @NgModule({
   imports: [
@@ -63,13 +64,15 @@ import { ProjectCardComponent } from './material/project-card/project-card.compo
     ProfileComponent,
     ProjectsCreatedComponent,
     ProjectsSignedUpForComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    DeleteDialogComponent
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
     EditDialogComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    DeleteDialogComponent
   ]
 })
 
