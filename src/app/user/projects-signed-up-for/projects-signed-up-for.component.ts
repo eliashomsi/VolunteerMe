@@ -60,7 +60,7 @@ export class ProjectsSignedUpForComponent implements OnInit {
       this.projects$.subscribe(result => {
         this.projects = result.filter(item => {
           if (item.key) {
-            this.addMarker(item.address)
+            this.addMarker(item.address, item)
             return this.projectKeys.includes(item.key)
           }
         });
@@ -77,15 +77,27 @@ export class ProjectsSignedUpForComponent implements OnInit {
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
   }
 
-  addMarker(location) {
+  addMarker(location, item) {
     this.geocodeService.geocodeAddress(location)
       .subscribe((location) => {
         this.location = location;
         this.loading = false;
         this.map.setCenter(location);
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
           map: this.map,
           position: location
+        });
+
+        let infowindow = new google.maps.InfoWindow({
+          content: `<h1> ${item.title} </h1> <p> ${item.description} </p> <b> ${item.address} </b> <div> <i> volunteers needed: ${item.numberOfVolunteers} </i> </div>`
+        });
+
+        marker.addListener('mouseover', function() {
+          infowindow.open(this.getMap(), this);
+        });
+
+        marker.addListener('mouseout', function() {
+          infowindow.close();
         });
       }
       );
