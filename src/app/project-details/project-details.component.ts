@@ -16,7 +16,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ProjectDetailsComponent  {
   name="george";
-  tag=[]
   projectForm: FormGroup;
   public projectsRef: AngularFireList<ProjectModel>;
   public db: AngularFireDatabase;
@@ -24,24 +23,25 @@ export class ProjectDetailsComponent  {
   public extractor: ExtractKeywords;
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<ProjectDetailsComponent>) {
     this.createForm();
+    this.tags = [];
     this.extractor = new ExtractKeywords();
    }
 
    createForm() {
     this.projectForm = this.fb.group({
-      name: ['', Validators.required ],
+      title: ['', Validators.required ],
       address: ['',Validators.required],
-      imageURL: ['',Validators.required],
+      image: ['',Validators.required],
       date: ['',Validators.required],
-      volunteers:['',Validators.required],
+      numberOfVolunteers:['',Validators.required],
       description:['',Validators.required],
-      tag:[[],Validators.required],
+      tags:[[],Validators.required],
       phoneNumber:['',Validators.required]
     });
   }
 
   addProject(value){
-    value.tag = this.tag;
+    value.tags = this.tags;
     if(value) {
       this.dialogRef.close(value);
     } else {
@@ -50,14 +50,14 @@ export class ProjectDetailsComponent  {
   }
 
   clearTags() {
-    this.tag = [];
+    this.tags = [];
   }
 
   addtag(value){
-    this.tag.push(value.tag)
+    this.tags.push(value.tags)
   }
 
   public predictTags(event) {
-    this.extractor.getKeywords(event.target.value, result => this.tag = this.tag.concat(result));
+    this.extractor.getKeywords(event.target.value, result => this.tags = this.tags.concat(result));
   }
 }

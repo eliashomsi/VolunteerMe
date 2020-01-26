@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { FirebaseUserModel } from 'src/app/core/user.model';
+import { UserModel } from 'src/app/core/user.model';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 @Component({
@@ -14,8 +14,8 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit, AfterViewInit {
-  user: FirebaseUserModel = new FirebaseUserModel();
+export class ProfileComponent implements OnInit {
+  user: UserModel = new UserModel();
   profileForm: FormGroup;
 
   FilterTags = ['java', 'nancy', 'jquery'];
@@ -43,14 +43,14 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      const mapProperties = {
-        center: new google.maps.LatLng(35.2271, -80.8431),
-        zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
-    }, 3000);
+    // setTimeout(() => {
+    //   const mapProperties = {
+    //     center: new google.maps.LatLng(35.2271, -80.8431),
+    //     zoom: 15,
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    //   };
+    //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
+    // }, 3000);
   }
 
   getUser() {
@@ -87,7 +87,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       });
   }
 
-  openDialog(user: FirebaseUserModel): void {
+  openDialog(user: UserModel): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       data: { user: user }
     });

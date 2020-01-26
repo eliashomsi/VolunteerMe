@@ -4,7 +4,7 @@
         <h2>Description:</h2>
         <div class="form-group">
             <label>Project Name</label>
-            <input type="text" formControlName="name" class="form-control" placeholder="Title" reuqired>
+            <input type="text" formControlName="title" class="form-control" placeholder="Title" reuqired>
         </div>
         <div class="form-group">
             <label>Address</label>
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label>Image</label>
-            <input type="url" class="form-control" formControlName="imageURL" placeholder="Image Url" reuqired>
+            <input type="url" class="form-control" formControlName="image" placeholder="Image Url" reuqired>
         </div>
 
         <div class="form-group">
@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label>Number of Volutunteers</label>
-            <input type="number" class="form-control" formControlName="volunteers" placeholder="Volunteers" reuqired>
+            <input type="number" class="form-control" formControlName="numberOfVolunteers" placeholder="Volunteers" reuqired>
         </div>
         <div class="form-group">
             <label>Project Description</label>
@@ -32,23 +32,20 @@
             <input class="form-control" formControlName="phoneNumber" placeholder="Phone Number" reuqired>
         </div>
         <div class="form-group" style="margin-bottom:0; display:inline-block;">
-            <label>tag</label>
-            <input type="text" class="form-control" formControlName="tag" placeholder="Keyword"
-                style="float: left; width: 50%;" reuqired>
+            <label>tags</label>
+            <input type="text" class="form-control" formControlName="tags" placeholder="Keyword" style="float: left; width: 50%;" reuqired>
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" (click)="addtag(projectForm.value)" class="btn btn-success"
-                   >Add</button>
-                <button type="button" (click)="clearTags()" class="btn btn-danger"
-                    >Clear</button>
+                <button type="button" (click)="addtag(projectForm.value)" class="btn btn-success" style="margin-right: 10px; margin-left: 10px; width:50px; color: black; background-color: #bad7df;">Add</button>
+                <button type="button" (click)="clearTags()" class="btn btn-danger" style="width:50px; color: black; background-color: #ffe2e2;">Clear</button>
             </div>
         </div>
         <br/>
         <mat-chip-list>
-            <mat-chip *ngFor="let item of tag">{{item}}</mat-chip>
+            <mat-chip *ngFor="let item of tags">{{item}}</mat-chip>
         </mat-chip-list>
         <br/>
         <br/>
-        <button type="submit" (click)="addProject(projectForm.value)" class="btn btn-success btn-block">Post
+        <button type="submit" (click)="addProject(projectForm.value)" class="btn btn-success btn-block" style="background:#303841">Post
             Project</button>
     </form>
 </mat-dialog-content>

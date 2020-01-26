@@ -6,8 +6,8 @@ import { ProjectModel } from 'src/app/core/project.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserService } from 'src/app/core/user.service';
-import { FirebaseUserModel } from 'src/app/core/user.model';
-import { Router, ActivatedRoute } from '@angular/router';
+import { UserModel } from 'src/app/core/user.model';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
@@ -19,23 +19,23 @@ export class ProjectsCreatedComponent implements OnInit {
   public projectsRef: AngularFireList<ProjectModel>;
   public projects$: Observable<ProjectModel[]>;
   public projects: ProjectModel[];
-  public user: FirebaseUserModel;
-  
+  public user: UserModel;
+
   constructor(
     db: AngularFireDatabase,
     public userService: UserService,
     public authService: AuthService,
     private route: ActivatedRoute,
     public dialog: MatDialog
-    ) {
+  ) {
     this.projectsRef = db.list('/projects');
     this.projects$ = this.projectsRef.snapshotChanges().pipe(
-      map(changes => 
+      map(changes =>
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
     );
     this.projects$.subscribe(result => {
-        this.projects = result.filter(item => item.ownerEmail == this.user.email);
+      this.projects = result.filter(item => item.ownerEmail == this.user.email);
     });
   }
 
@@ -49,15 +49,18 @@ export class ProjectsCreatedComponent implements OnInit {
   }
 
   openDialog() {
-      const dialogRef = this.dialog.open(ProjectDetailsComponent);
-  
-      dialogRef.afterClosed().subscribe(result => {
+    const dialogRef = this.dialog.open(ProjectDetailsComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
         this.createProject(result);
-        console.log('The dialog was closed', result);
-      });
+      }
+    });
   }
 
-  createProject(project) {
-    
+  createProject(project: ProjectModel) {
+    project.ownerEmail = this.user.email;
+    this.projectsRef.push(project);
+    this.projects.push(project);
   }
 }

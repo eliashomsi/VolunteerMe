@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseUserModel } from '../core/user.model';
+import { UserModel } from '../core/user.model';
 import { UserService } from '../core/user.service';
 
 @Component({

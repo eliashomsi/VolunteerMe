@@ -1,53 +1,38 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-
 <div class="d-flex flex-grow-1 justify-content-end">
-  <button *ngIf="!editState" mat-button (click)="logout()" matTooltip="Log out">
-    <mat-icon>
+    <button *ngIf="!editState" mat-button (click)="logout()" matTooltip="Log out">
+    <mat-icon color="white" style="width: 40px;">
       exit_to_app
     </mat-icon>
+    <div>Log Out</div>
   </button>
-  <button mat-button (click)="openDialog(user)" matTooltip="Edit">
+    <button mat-button (click)="openDialog(user)" matTooltip="Edit">
     <mat-icon>
       edit
     </mat-icon>
+    <div>Edit Your Profile</div>
   </button>
 </div>
 
-<div class=" d-flex flex-grow-1">
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-      <div class="well profile">
-        <div class="col-sm-12">
-          <div class="col-xs-12 col-sm-8">
-            <h2>{{ user.displayName }}</h2>
-            <p><strong>About: </strong> Web Designer / UI. </p>
-            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+<div class="col-xs-12 col-sm-4 text-center" style="float: left; margin-right: 0; ">
 
-            <p class="d-flex flex-row flex-wrap align-items-center">
-              <strong class="mr-1">Skills: </strong>              
-              <mat-chip-list>
-                <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}}</mat-chip>
-              </mat-chip-list>
-            </p>
-              
-          </div>
-          <div class="col-xs-12 col-sm-4 text-center">
-            <figure>
-              <img *ngIf="!user.photoURL" src="../../assets/user-male-icon.png" alt="" class="img-circle img-responsive">
-              <img *ngIf="user.photoURL" [src]="user.photoURL" alt="profile pict" class="img-circle img-responsive">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <img *ngIf="!user.photoURL" src="../../assets/user-male-icon.png" alt="">
+    <img *ngIf="user.photoURL" [src]="user.photoURL" alt="profile pict" class="img-circle img-responsive" style="border-radius: 30%; width: 250px; height: 250px; position: relative;">
+
 </div>
 
+<div class="col-xs-12 col-sm-8" style=" float: right; border-radius: 0%; margin-left: 10px;  height:200px; margin: auto; color: black; ">
+    <h1 style="color: black; font-size: 30px; letter-spacing: 3px; font-weight: 500;text-align: left;">{{ user.displayName }}</h1>
+    <p style="color: black; font-size: 20px;"><strong style="color: black; font-size: 20px;">About: </strong> Web Designer / UI. </p>
+    <p style="color: black; font-size: 20px;"><strong style="color: black; font-size: 20px;">Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+    <p class="d-flex flex-row flex-wrap align-items-center">
+        <strong class="mr-1" style="color: black; font-size: 20px;">Skills: </strong>
+        <mat-chip-list>
+            <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}}</mat-chip>
+        </mat-chip-list>
+    </p>
+</div>
 
+<!-- <mat-card>
+  <div #mapElement style="width:100%;height:400px"></div>
+</mat-card> -->
 
-<div #mapElement style="width:100%;height:400px"></div>

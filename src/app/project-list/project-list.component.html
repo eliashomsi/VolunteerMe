@@ -1,14 +1,19 @@
 <br />
 <h1>Project List</h1>
-Filter: <input type="text" placeholder="Add filters and press enter" value={{filterInput}}
-    (change)="changeInput($event)" size="20" />
-<mat-chip-list>
-    <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}} <button class="xmark" name={{tagMe}}
-            (click)="removeFilter($event)">X </button></mat-chip>
-</mat-chip-list>
+<div style="margin: 0 40% 20px 40%;">
+    <h2 style=" float: left; margin: 20px 5% 20px 5%;  ">Filter:</h2>
+    <input style="margin: 10px; width: 45%; border-radius: 10px;" type="text " placeholder="Add filters and press enter " value={{filterInput}} (change)="changeInput($event) " size="20" />
+</div>
 
-<div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
-    <div *ngFor="let item of projects" [routerLink]="['/project-details']">
-        <app-project-card [item]="item"></app-project-card>
+<div style="width: 100%; position: relative; ">
+
+
+    <mat-chip-list>
+        <mat-chip *ngFor="let tagMe of FilterTags ">{{tagMe}} <button class="xmark " name={{tagMe}} (click)="removeFilter($event) ">X </button></mat-chip>
+    </mat-chip-list>
+</div>
+<div class="d-flex flex-row flex-wrap align-items-center justify-content-center ">
+    <div *ngFor="let item of projects ">
+        <app-project-card [item]="item " [user]="user "></app-project-card>
     </div>
 </div>
