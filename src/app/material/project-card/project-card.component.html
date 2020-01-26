@@ -1,13 +1,11 @@
 <mat-card class="project-card">
-    <mat-card-header class="d-flex align-items-center">
-        <mat-card-title>
-            <h2 style="text-align: left;">{{item.title}}</h2>
-        </mat-card-title>
-        <button mat-button class="ml-auto" (click)="enrollUser()"
+    <div class="d-flex align-items-center justify-content-between flex-wrap">
+        <h1>{{item.title}}</h1>
+        <button *ngIf="attend" mat-button (click)="enrollUser()"
             style="margin-bottom: 10px; font-size: 20px; background: #303841;">
-            <h5 style="color: white;">Attend Event</h5>
+            <span style="color: white;">Attend Event</span>
         </button>
-    </mat-card-header>
+    </div>
     <img *ngIf="item.image" mat-card-image class="project-image" src={{item.image}}>
     <img *ngIf="!item.image" mat-card-image class="project-image" [src]="'../../../assets/placeholder.png'">
     <mat-card-content>
