@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FirebaseUserModel } from 'src/app/core/user.model';
+import { UserModel } from 'src/app/core/user.model';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -11,7 +11,7 @@ import { FirebaseUserModel } from 'src/app/core/user.model';
 export class EditDialogComponent implements OnInit {
 
   profileForm: FormGroup;
-  user: FirebaseUserModel;
+  user: UserModel;
 
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<EditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data) { }

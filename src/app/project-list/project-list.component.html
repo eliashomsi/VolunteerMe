@@ -8,7 +8,7 @@ Filter: <input type="text" placeholder="Add filters and press enter" value={{fil
 </mat-chip-list>
 
 <div class="d-flex flex-row flex-wrap align-items-center justify-content-center">
-    <div *ngFor="let item of projects" [routerLink]="['/project-details']">
-        <app-project-card [item]="item"></app-project-card>
+    <div *ngFor="let item of projects">
+        <app-project-card [item]="item" [user]="user"></app-project-card>
     </div>
 </div>

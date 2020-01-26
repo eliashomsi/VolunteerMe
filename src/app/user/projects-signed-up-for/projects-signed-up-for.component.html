@@ -1,3 +1,6 @@
-<p>
-  projects-signed-up-for works!
-</p>
+<br/>
+
+<h2> Signed up projects </h2>
+<div *ngFor="let project of projects">
+  <app-project-card [item]="project"></app-project-card>
+</div>

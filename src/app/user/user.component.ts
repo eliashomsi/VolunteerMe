@@ -4,7 +4,7 @@ import { AuthService } from '../core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FirebaseUserModel } from '../core/user.model';
+import { UserModel } from '../core/user.model';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatTabGroup } from '@angular/material/tabs';
