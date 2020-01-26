@@ -32,14 +32,15 @@ export class ProjectCardComponent implements OnInit {
         this.projectsRef.remove(this.item.key);
       }
     });
-    // window.location.reload();
   }
 
   enrollUser() {
     if (this.item.numberOfVolunteers != 0) {
       let model = new EnrollmentModel();
       model.projectKey = this.item.key;
-      model.volunteerEmail = this.user.email;
+      if (this.user) {
+        model.volunteerEmail = this.user.email;
+      }
 
       this.projectsRef.update(this.item.key, { numberOfVolunteers: this.item.numberOfVolunteers - 1 });
       this.enrollmentsRef.push(model);

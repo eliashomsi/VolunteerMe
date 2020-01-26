@@ -1,6 +1,6 @@
 // import {} from 'googlemaps';
 
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { UserService } from 'src/app/core/user.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,9 +20,6 @@ export class ProfileComponent implements OnInit {
 
   FilterTags = ['java', 'nancy', 'jquery'];
 
-  @ViewChild('mapElement', { static: false }) mapElement: any;
-  map: google.maps.Map;
-
   constructor(
     public userService: UserService,
     public authService: AuthService,
@@ -40,17 +37,6 @@ export class ProfileComponent implements OnInit {
         this.createForm(this.user.displayName, this.user.email);
       }
     });
-  }
-
-  ngAfterViewInit() {
-    // setTimeout(() => {
-    //   const mapProperties = {
-    //     center: new google.maps.LatLng(35.2271, -80.8431),
-    //     zoom: 15,
-    //     mapTypeId: google.maps.MapTypeId.ROADMAP
-    //   };
-    //   this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
-    // }, 3000);
   }
 
   getUser() {

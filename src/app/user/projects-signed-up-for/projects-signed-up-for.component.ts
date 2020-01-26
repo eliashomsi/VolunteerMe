@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { ProjectModel } from 'src/app/core/project.model';
 import { Observable } from 'rxjs';
@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { EnrollmentModel } from 'src/app/core/enrollment.model';
+import { GeocodeService } from 'src/app/geocode.service';
 
 @Component({
   selector: 'app-projects-signed-up-for',
@@ -25,11 +26,20 @@ export class ProjectsSignedUpForComponent implements OnInit {
 
   public user: UserModel;
 
+  @ViewChild('mapElement', { static: false }) mapElement: any;
+  map: google.maps.Map;
+
+  address = 'London';
+  location: Location;
+  loading: boolean;
+
   constructor(
     db: AngularFireDatabase,
     public userService: UserService,
     public authService: AuthService,
     private route: ActivatedRoute,
+    private geocodeService: GeocodeService,
+    private ref: ChangeDetectorRef
   ) {
     this.enrollmentsRef = db.list('/enrollments');
     this.enrollments$ = this.enrollmentsRef.snapshotChanges().pipe(
@@ -49,12 +59,36 @@ export class ProjectsSignedUpForComponent implements OnInit {
       this.projectKeys = result.map(item => item.projectKey);
       this.projects$.subscribe(result => {
         this.projects = result.filter(item => {
-         if (item.key) {
+          if (item.key) {
+            this.addMarker(item.address)
             return this.projectKeys.includes(item.key)
           }
         });
       });
     });
+  }
+
+  ngAfterViewInit() {
+    const mapProperties = {
+      center: new google.maps.LatLng(35.2271, -80.8431),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
+  }
+
+  addMarker(location) {
+    this.geocodeService.geocodeAddress(location)
+      .subscribe((location) => {
+        this.location = location;
+        this.loading = false;
+        this.map.setCenter(location);
+        var marker = new google.maps.Marker({
+          map: this.map,
+          position: location
+        });
+      }
+      );
   }
 
   ngOnInit() {
