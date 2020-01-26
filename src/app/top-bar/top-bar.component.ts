@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseUserModel } from '../core/user.model';
+import { UserService } from '../core/user.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  user;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.getCurrentUser()
+      .then(user => {
+        this.user = user;
+      }, err => {
+        console.error(err);
+      });
   }
 
 }

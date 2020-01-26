@@ -7,12 +7,22 @@ import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectListComponent } from './project-list/project-list.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { ProjectsCreatedComponent } from './user/projects-created/projects-created.component';
+import { ProjectsSignedUpForComponent } from './user/projects-signed-up-for/projects-signed-up-for.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
-  { path: 'user', component: UserComponent,  resolve: { data: UserResolver}},
-  { path: 'project-list', component: ProjectListComponent},
+  {
+    path: 'user', component: UserComponent, 
+    children: [
+      { path: 'profile', component: ProfileComponent, resolve: { data: UserResolver }, },
+      { path: 'projects-created', component: ProjectsCreatedComponent },
+      { path: 'projects-signed-up-for', component: ProjectsSignedUpForComponent }
+    ]
+  },
+  { path: 'project-list', component: ProjectListComponent },
   { path: 'project-details', component: ProjectDetailsComponent },
 ];

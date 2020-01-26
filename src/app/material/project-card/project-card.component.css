@@ -1,0 +1,19 @@
+.project-card {
+  max-width: 400px;
+}
+.project-image {
+  height: 300px;
+}
+
+mat-card {
+    margin: 20px;
+  }
+  
+  .btn-not-btn {
+    cursor: auto;
+  }
+  
+  .mat-button-focus-overlay {
+    opacity: 0 !important;
+  }
+  
