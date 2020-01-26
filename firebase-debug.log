@@ -1,0 +1,69 @@
+[debug] [2020-01-26T16:07:26.424Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:07:26.426Z] Command:       /usr/bin/node /usr/bin/firebase login
+[debug] [2020-01-26T16:07:26.426Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:07:26.426Z] Platform:      linux
+[debug] [2020-01-26T16:07:26.426Z] Node Version:  v10.18.0
+[debug] [2020-01-26T16:07:26.427Z] Time:          Sun Jan 26 2020 11:07:26 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:07:26.427Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:07:26.427Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again.
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=1003935053&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-01-26T16:07:27.496Z] Error: spawn cmd.exe ENOENT
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:240:19)
+    at onErrorNT (internal/child_process.js:415:16)
+    at process._tickCallback (internal/process/next_tick.js:63:19)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-01-26T16:08:40.091Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:08:40.093Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\it-el\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2020-01-26T16:08:40.093Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:08:40.093Z] Platform:      win32
+[debug] [2020-01-26T16:08:40.093Z] Node Version:  v10.15.1
+[debug] [2020-01-26T16:08:40.095Z] Time:          Sun Jan 26 2020 11:08:40 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:08:40.095Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:08:40.095Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again.
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=601449139&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-01-26T16:08:47.045Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+
+[debug] [2020-01-26T16:08:47.273Z] <<< HTTP RESPONSE 200
+[info] 
+[info] +  Success! Logged in as eliasalhomsi@gmail.com
+[debug] [2020-01-26T16:12:46.956Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:12:46.958Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-01-26T16:12:46.959Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:12:46.959Z] Platform:      linux
+[debug] [2020-01-26T16:12:46.959Z] Node Version:  v10.18.0
+[debug] [2020-01-26T16:12:46.960Z] Time:          Sun Jan 26 2020 11:12:46 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:12:46.960Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:12:46.960Z] 
+[debug] [2020-01-26T16:12:46.970Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-26T16:12:46.971Z] > attempting to authenticate via app default credentials
+[debug] [2020-01-26T16:12:47.151Z] ! auto-auth error: Could not load the default credentials. Browse to https://developers.google.com/accounts/docs/application-default-credentials for more information.
+[debug] [2020-01-26T16:12:47.152Z] > no credentials could be found or automatically retrieved
+[error] 
+[error] Error: Command requires authentication, please run firebase login
+[debug] [2020-01-26T16:12:47.417Z] Error: ENOENT: no such file or directory, unlink '/mnt/c/Users/it-el/source/repos/VolunteerMe/firebase-debug.log'
+    at Object.unlinkSync (fs.js:956:3)
+    at process.<anonymous> (/usr/lib/node_modules/firebase-tools/lib/bin/firebase.js:68:12)
+    at process.emit (events.js:203:15)
+    at process.exit (internal/process/per_thread.js:168:15)
+    at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/errorOut.js:19:17)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+[error] 
+[error] Error: An unexpected error has occurred.
