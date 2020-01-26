@@ -15,6 +15,7 @@ export class UserResolver implements Resolve<FirebaseUserModel> {
     return new Promise((resolve, reject) => {
       this.userService.getCurrentUser()
       .then(res => {
+        user.email = res.email;
         if(res.providerData[0].providerId == 'password'){
           user.photoURL = 'https://via.placeholder.com/400x300';
           user.displayName = res.displayName;

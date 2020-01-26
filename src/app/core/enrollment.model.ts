@@ -1,9 +1,9 @@
 export class EnrollmentModel {
-    projectTitle: string;
+    projectKey: string;
     volunteerEmail: string;
 
     constructor(){
-        this.projectTitle = "";
+        this.projectKey = "";
         this.volunteerEmail = "";
     }
   }
