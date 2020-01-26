@@ -1,23 +1,29 @@
-
-
-.header{
+.header {
     text-align: center;
     font-size: 30px;
     margin-bottom: 40px;
-  }
-  
-  .row{
+}
+
+.row {
     margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .error{
+}
+
+.error {
     color: red;
-  }
-  
-  .success{
+}
+
+.success {
     color: green;
-  }
-  
+}
+
+.socialMedia {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 100%;
+    background: #303841;
+    text-align: center;
+}

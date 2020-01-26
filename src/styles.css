@@ -10,9 +10,8 @@
 
 body {
     margin: 0;
-    background-color: #E6CED0;
-    /*background-image: url('back.jpeg');*/
-    height: 60px;
+    /*background-image: -webkit-linear-gradient(20deg, #ffe2e2 50%, #bad7df 50%);*/
+    height: 100%;
 }
 
 .main-container {
