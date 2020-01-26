@@ -16,6 +16,7 @@ export class ProjectCardComponent implements OnInit {
 
   @Input() item;
   @Input() user;
+  @Input() delete: boolean;
 
   constructor(db: AngularFireDatabase, public dialog: MatDialog) {
     this.projectsRef = db.list('/projects');

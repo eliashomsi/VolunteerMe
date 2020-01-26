@@ -20,7 +20,7 @@
     <mat-card-actions>
         <button mat-button class="btn-not-btn">Date: {{item.date}}</button>
         <button mat-button class="btn-not-btn">{{item.numberOfVolunteers}} volunteers needed</button>
-        <button (click)="deleteProject()"
+        <button *ngIf="delete" (click)="deleteProject()"
             style="border-radius: 50%; background-color: #e0e0e0; right: 10px; position:absolute;">
             <mat-icon>
                 delete
