@@ -49,14 +49,15 @@ export class ProjectDetailsComponent  {
     }
   }
 
-  addtag(value){
-    this.tag.push(value.tag)
-    console.log(this.tag);
+  clearTags() {
+    this.tag = [];
   }
 
-  predictTags(event) {
-    var smartTags = [];
-    this.extractor.getKeywords(event.target.value, result => smartTags=result);
-    this.tag = this.tag.concat(smartTags);
+  addtag(value){
+    this.tag.push(value.tag)
+  }
+
+  public predictTags(event) {
+    this.extractor.getKeywords(event.target.value, result => this.tag = this.tag.concat(result));
   }
 }
