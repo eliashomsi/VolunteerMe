@@ -57,7 +57,8 @@ export class ProjectsCreatedComponent implements OnInit {
       });
   }
 
-  createProject(project) {
-    
+  createProject(project: ProjectModel) {
+    this.projectsRef.push(project);
+    this.projects.push(project);
   }
 }
