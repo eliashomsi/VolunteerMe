@@ -16,3 +16,7 @@ cd project
 npm i
 npm run startme
 ```
+
+## more Info
+https://devpost.com/software/volunteerme-dx0msp
+
