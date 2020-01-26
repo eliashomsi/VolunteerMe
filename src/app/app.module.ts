@@ -31,7 +31,8 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 
 // font-awesome 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditDialogComponent } from './user/edit-dialog/edit-dialog.component'
 
 @NgModule({
   imports: [
@@ -53,10 +54,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     ProjectDetailsComponent,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditDialogComponent
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EditDialogComponent
+  ]
 })
 
 export class AppModule { }
