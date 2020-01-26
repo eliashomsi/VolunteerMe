@@ -1,3 +1,8 @@
 <button mat-button (click)="openDialog()">
-  Create new Event
+  <mat-icon>add</mat-icon>
+  Create new Project
 </button>
+
+<div *ngFor="let project of projects">
+  <app-project-card [item]="project"></app-project-card>
+</div>

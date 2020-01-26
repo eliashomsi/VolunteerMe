@@ -19,7 +19,7 @@ export class EditDialogComponent implements OnInit {
   ngOnInit() {
     this.user = this.data['user']
     this.profileForm = this.fb.group({
-      name: [this.user.name, Validators.required ],
+      name: [this.user.displayName, Validators.required ],
       email: [this.user.email]
     });    
   }

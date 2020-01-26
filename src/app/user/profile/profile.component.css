@@ -78,3 +78,7 @@ span.tag1 {
 h1 {
     letter-spacing: 5px;
 }
+
+body {
+    background-image: none;
+}

@@ -1,4 +1,5 @@
 export class ProjectModel {
+  key: string;
   title: string;
   description: string;
   image: string;
@@ -10,6 +11,7 @@ export class ProjectModel {
   ownerEmail: string;
 
   constructor(){
+    this.key = "";
     this.title = "";
     this.description = "";
     this.image = "";

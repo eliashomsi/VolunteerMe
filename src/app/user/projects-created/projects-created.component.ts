@@ -52,7 +52,13 @@ export class ProjectsCreatedComponent implements OnInit {
       const dialogRef = this.dialog.open(ProjectDetailsComponent);
   
       dialogRef.afterClosed().subscribe(result => {
+        this.createProject(result);
         console.log('The dialog was closed', result);
       });
+  }
+
+  createProject(project: ProjectModel) {
+    this.projectsRef.push(project);
+    this.projects.push(project);
   }
 }
