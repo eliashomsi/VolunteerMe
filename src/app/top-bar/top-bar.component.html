@@ -2,7 +2,7 @@
   <h1>Home Page</h1>
 </a>
 
-<!-- <a [routerLink]="['/login']" class="button fancy-button"><i class="material-icons">person_pin</i>Login</a> -->
-<a [routerLink]="['user']" class="button fancy-button">
-  <i class="material-icons">person</i>
+<a [routerLink]="['user']" class="button">
+  <i *ngIf="!user?.providerData[0]?.photoURL" class="material-icons">person</i>
+  <img class="image" *ngIf="user?.providerData[0]?.photoURL" [src]="user.providerData[0].photoURL">
 </a>

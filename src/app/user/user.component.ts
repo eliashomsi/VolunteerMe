@@ -13,12 +13,10 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
   templateUrl: 'user.component.html',
   styleUrls: ['user.scss']
 })
-export class UserComponent implements OnInit{
+export class UserComponent implements OnInit {
 
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
-  editState: boolean;
-
   FilterTags = ['java', 'nancy', 'jquery']
 
   constructor(
@@ -26,15 +24,11 @@ export class UserComponent implements OnInit{
     public authService: AuthService,
     private route: ActivatedRoute,
     private router: Router,
-    private location : Location,
     private fb: FormBuilder,
     public dialog: MatDialog
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
-    this.editState = false;
     this.route.data.subscribe(routeData => {
       let data = routeData['data'];
       if (data) {
@@ -46,37 +40,27 @@ export class UserComponent implements OnInit{
 
   createForm(name: string, email?: string) {
     this.profileForm = this.fb.group({
-      name: [name, Validators.required ],
+      name: [name, Validators.required],
       email: [email]
     });
     this.profileForm.get('name').disable();
     this.profileForm.get('email').disable();
   }
 
-  save(value){
-    this.editToggle();
+  save(value) {
     this.userService.updateCurrentUser(value)
-    .then(res => {
-      console.log(res);
-    }, err => console.error(err))
+      .then(res => {
+        console.log(res);
+      }, err => console.error(err))
   }
 
-  logout(){
+  logout() {
     this.authService.doLogout()
-    .then((res) => {
-      this.router.navigate(['login']);
-    }, (error) => {
-      console.log("Logout error", error);
-    });
-  }
-
-  editToggle() {
-    this.editState = !this.editState;
-
-    let control = this.profileForm.get('name')
-    control.disabled ? control.enable() : control.disable();
-    control = this.profileForm.get('email')
-    control.disabled ? control.enable() : control.disable();
+      .then((res) => {
+        this.router.navigate(['login']);
+      }, (error) => {
+        console.log("Logout error", error);
+      });
   }
 
   openDialog(user: FirebaseUserModel): void {
