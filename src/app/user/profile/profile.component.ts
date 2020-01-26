@@ -1,6 +1,4 @@
-// import {} from 'googlemaps';
-
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/core/user.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -43,6 +41,7 @@ export class ProfileComponent implements OnInit {
     this.userService.getCurrentUser()
       .then(user => {
         this.user = user.providerData[0];
+        location.reload();
       }, err => {
         console.error(err);
       });
