@@ -1,12 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserModel } from '../core/user.model';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatTabGroup } from '@angular/material/tabs';
 
 @Component({
@@ -28,11 +24,11 @@ export class UserComponent implements OnInit {
       path: './projects-created',
       index: 1
     }, {
-      label: 'Signed projects',
+      label: 'Signed Projects',
       path: './projects-signed-up-for',
       index: 2
     },  {
-      label: 'Projects locations',
+      label: 'Projects Locations',
       path: './map',
       index: 3
     },
