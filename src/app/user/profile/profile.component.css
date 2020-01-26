@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400);
 .header {
   text-align: center;
   font-size: 30px;
@@ -12,7 +13,6 @@
   width: 100%;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400);
 :host {
   width: 100%;
 }

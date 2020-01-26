@@ -25,20 +25,29 @@
         </div>
         <div class="form-group">
             <label>Project Description</label>
-            <textarea class="form-control" formControlName="description" placeholder="Description" reuqired></textarea>
+            <textarea class="form-control" formControlName="description" placeholder="Description" (change)="predictTags($event)" required></textarea>
         </div>
         <div class="form-group">
             <label>Phone Number</label>
             <input class="form-control" formControlName="phoneNumber" placeholder="Phone Number" reuqired>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="margin-bottom:0; display:inline-block;">
             <label>tag</label>
             <input type="text" class="form-control" formControlName="tag" placeholder="Keyword"
                 style="float: left; width: 50%;" reuqired>
-            <button type="submit" (click)="addtag(projectForm.value)" class="btn btn-success btn-block"
-                style="float: left; width: 50%;">Add</button>
-            <div *ngFor="let item of tag" style="margin: auto;">#{{item}} </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" (click)="addtag(projectForm.value)" class="btn btn-success"
+                   >Add</button>
+                <button type="button" (click)="clearTags()" class="btn btn-danger"
+                    >Clear</button>
+            </div>
         </div>
+        <br/>
+        <mat-chip-list>
+            <mat-chip *ngFor="let item of tag">{{item}}</mat-chip>
+        </mat-chip-list>
+        <br/>
+        <br/>
         <button type="submit" (click)="addProject(projectForm.value)" class="btn btn-success btn-block">Post
             Project</button>
     </form>

@@ -41,18 +41,17 @@ export class ProjectDetailsComponent  {
 
   addProject(value){
     value.tag = this.tag;
-    console.log(value);
+  }
 
+  clearTags() {
+    this.tag = [];
   }
 
   addtag(value){
     this.tag.push(value.tag)
-    console.log(this.tag);
   }
 
-  predictTags(event) {
-    var smartTags = [];
-    this.extractor.getKeywords(event.target.value, result => smartTags=result);
-    this.tag = this.tag.concat(smartTags);
+  public predictTags(event) {
+    this.extractor.getKeywords(event.target.value, result => this.tag = this.tag.concat(result));
   }
 }
