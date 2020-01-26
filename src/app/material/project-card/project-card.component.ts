@@ -22,6 +22,7 @@ export class ProjectCardComponent implements OnInit {
     }
     window.location.reload();
   }
+  
   ngOnInit() {
   }
 }
