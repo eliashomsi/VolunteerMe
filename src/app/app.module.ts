@@ -68,7 +68,8 @@ import { ProjectCardComponent } from './material/project-card/project-card.compo
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [
-    EditDialogComponent
+    EditDialogComponent,
+    ProjectDetailsComponent
   ]
 })
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ProjectDetailsComponent } from 'src/app/project-details/project-details.component';
 import { AngularFireList, AngularFireDatabase } from '@angular/fire/database';
 import { ProjectModel } from 'src/app/core/project.model';
 import { Observable } from 'rxjs';
@@ -48,10 +49,10 @@ export class ProjectsCreatedComponent implements OnInit {
   }
 
   openDialog() {
-      // const dialogRef = this.dialog.open(EditDialogComponent);
+      const dialogRef = this.dialog.open(ProjectDetailsComponent);
   
-      // dialogRef.afterClosed().subscribe(result => {
-      //   console.log('The dialog was closed', result);
-      // });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed', result);
+      });
   }
 }
