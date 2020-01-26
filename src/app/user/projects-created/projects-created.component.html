@@ -2,3 +2,7 @@
   <mat-icon>add</mat-icon>
   Create new Event
 </button>
+
+<div *ngFor="let project of projects">
+  <app-project-card [item]="project"></app-project-card>
+</div>

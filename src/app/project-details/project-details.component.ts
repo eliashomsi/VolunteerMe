@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import {ExtractKeywords} from '../core/extractKeywords.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class ProjectDetailsComponent  {
   public db: AngularFireDatabase;
   public tags: string[];
   public extractor: ExtractKeywords;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<ProjectDetailsComponent>) {
     this.createForm();
     this.extractor = new ExtractKeywords();
    }
@@ -41,8 +42,11 @@ export class ProjectDetailsComponent  {
 
   addProject(value){
     value.tag = this.tag;
-    console.log(value);
-
+    if(value) {
+      this.dialogRef.close(value);
+    } else {
+      this.dialogRef.close();
+    }
   }
 
   addtag(value){

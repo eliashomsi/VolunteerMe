@@ -1,6 +1,9 @@
 <mat-card class="project-card">
-  <mat-card-header>
+  <mat-card-header class="d-flex align-items-center">
       <mat-card-title>{{item.title}}</mat-card-title>
+      <button mat-button class="ml-auto">
+        Attend Event
+      </button>
   </mat-card-header>
   <img mat-card-image class="project-image" src={{item.image}}>
   <mat-card-content>
