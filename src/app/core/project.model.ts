@@ -7,16 +7,18 @@ export class ProjectModel {
   date: Date;
   phoneNumber: string;
   tags: string[];
+  ownerEmail: string;
 
   constructor(){
-    this.image = "https://ahah/ahah.png";
-    this.title = "DOMeGood";
-    this.description = "MeDoGood";
-    this.numberOfVolunteers = 10;
-    this.address = "kidnapmestreet 19339";
+    this.title = "";
+    this.description = "";
+    this.image = "";
+    this.numberOfVolunteers = 0;
+    this.address = "";
+    this.phoneNumber = "";
     this.date = new Date(Date.now());
-    this.phoneNumber = "666-666-6666";
     this.tags=[];
     this.tags.push("sampleTag");
+    this.ownerEmail = "";
   }
 }

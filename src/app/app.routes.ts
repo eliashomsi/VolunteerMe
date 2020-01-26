@@ -18,9 +18,9 @@ export const rootRouterConfig: Routes = [
   {
     path: 'user', component: UserComponent, 
     children: [
-      { path: 'profile', component: ProfileComponent, resolve: { data: UserResolver }, },
-      { path: 'projects-created', component: ProjectsCreatedComponent },
-      { path: 'projects-signed-up-for', component: ProjectsSignedUpForComponent }
+      { path: 'profile', component: ProfileComponent, resolve: { data: UserResolver } },
+      { path: 'projects-created', component: ProjectsCreatedComponent, resolve: { data: UserResolver }, },
+      { path: 'projects-signed-up-for', component: ProjectsSignedUpForComponent, resolve: { data: UserResolver }, }
     ]
   },
   { path: 'project-list', component: ProjectListComponent },
