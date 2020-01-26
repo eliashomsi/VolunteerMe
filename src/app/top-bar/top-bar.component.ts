@@ -17,8 +17,6 @@ export class TopBarComponent implements OnInit {
     this.userService.getCurrentUser()
       .then(user => {
         this.user = user;
-        console.log(this.user.providerData[0].photoURL);
-        console.log(this.user);
       }, err => {
         console.error(err);
       });

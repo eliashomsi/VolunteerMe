@@ -32,7 +32,11 @@ import { UserComponent } from './user/user.component';
 
 // font-awesome 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { EditDialogComponent } from './user/edit-dialog/edit-dialog.component'
+import { EditDialogComponent } from './user/edit-dialog/edit-dialog.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { ProjectsCreatedComponent } from './user/projects-created/projects-created.component';
+import { ProjectsSignedUpForComponent } from './user/projects-signed-up-for/projects-signed-up-for.component';
+import { ProjectCardComponent } from './material/project-card/project-card.component'
 
 @NgModule({
   imports: [
@@ -55,7 +59,11 @@ import { EditDialogComponent } from './user/edit-dialog/edit-dialog.component'
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    ProfileComponent,
+    ProjectsCreatedComponent,
+    ProjectsSignedUpForComponent,
+    ProjectCardComponent
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent],
