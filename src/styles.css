@@ -2,7 +2,6 @@
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
 * {
-    font-family: 'Roboto', Arial, sans-serif;
     color: #616161;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -11,7 +10,8 @@
 
 body {
     margin: 0;
-    background-image: -webkit-linear-gradient(20deg, #F1F1F1 10%, #e8f1f5 90%);
+    background-color: #ccedd2;
+    background-image: url('back.jpeg');
     height: 60px;
 }
 
@@ -29,15 +29,18 @@ router-outlet+* {
 
 h1 {
     font-size: 32px;
+    font-family: 'Anton', sans-serif;
 }
 
 h2 {
     font-size: 20px;
+    font-family: 'Anton', sans-serif;
 }
 
 h1,
 h2 {
     font-weight: lighter;
+    font-family: 'Anton', sans-serif;
 }
 
 p {
@@ -89,6 +92,7 @@ button {
     cursor: pointer;
     background-color: #1976d2;
     color: white;
+    font: 'Anton', sans-serif;
     border: none;
 }
 
@@ -110,6 +114,7 @@ button:disabled {
 .fancy-button {
     background-color: white;
     color: #1976d2;
+    font: 'Anton', sans-serif;
 }
 
 .fancy-button i.material-icons {
@@ -129,6 +134,7 @@ app-top-bar {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font: 'Anton', sans-serif;
 }
 
 app-top-bar h1 {
@@ -160,5 +166,5 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
