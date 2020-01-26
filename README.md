@@ -1,4 +1,4 @@
-[Try our Demo](https://volunteermeconuhacks.herokuapp.com/)
+[Try our Demo](https://volunteerme-2d58b.firebaseapp.com)
 ## VolunteerMe
 ## ConuHack _CGI_Challenge
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; _VolunteerMe_ is a website that tries to provide services for the society; by connecting organizations who are searching for new volunteers with people who are interested in volunteering in certain field with these organisations.
