@@ -37,17 +37,6 @@
     "tslib": "1.10.0",
     "web-animations-js": "2.3.2",
     "@angular/cli": "7.3.8",
-    "zone.js": "0.9.1"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
-  "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
     "@angular/compiler-cli": "7.2.13",
     "@angular/language-service": "7.2.13",
@@ -67,5 +56,16 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "3.2.4"
+    "zone.js": "0.9.1"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "devDependencies": {
   }
 }
