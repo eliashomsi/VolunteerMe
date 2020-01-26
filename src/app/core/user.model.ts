@@ -1,13 +1,13 @@
 export class FirebaseUserModel {
-  image: string;
-  name: string;
-  provider: string;
+  photoURL: string;
+  displayName: string;
+  providerId: string;
   email: string;
 
   constructor(){
-    this.image = "";
-    this.name = "";
-    this.provider = "";
+    this.photoURL = "";
+    this.displayName = "";
+    this.providerId = "";
     this.email = "";
   }
 }

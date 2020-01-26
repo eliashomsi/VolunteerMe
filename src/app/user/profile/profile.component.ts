@@ -32,9 +32,18 @@ export class ProfileComponent implements OnInit {
       let data = routeData['data'];
       if (data) {
         this.user = data;
-        this.createForm(this.user.name, this.user.email);
+        this.createForm(this.user.displayName, this.user.email);
       }
     });
+  }
+
+  getUser() {
+    this.userService.getCurrentUser()
+      .then(user => {
+        this.user = user.providerData[0];        
+      }, err => {
+        console.error(err);
+      });
   }
 
   createForm(name: string, email?: string) {
@@ -49,7 +58,7 @@ export class ProfileComponent implements OnInit {
   save(value) {
     this.userService.updateCurrentUser(value)
       .then(res => {
-        console.log(res);
+        this.getUser();
       }, err => console.error(err))
   }
 
@@ -68,7 +77,7 @@ export class ProfileComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed', result);
+      this.save(result);
     });
   }
 
