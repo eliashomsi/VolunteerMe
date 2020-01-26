@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label>Project Description</label>
-        <textarea class="form-control" formControlName="description" placeholder="Description" reuqired></textarea>
+        <textarea class="form-control" formControlName="description" placeholder="Description" (change)="predictTags($event)" reuqired></textarea>
     </div>
     <div class="form-group">
         <label>Phone Number</label>

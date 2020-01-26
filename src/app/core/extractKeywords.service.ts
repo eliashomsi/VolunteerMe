@@ -8,14 +8,14 @@ export class ExtractKeywords {
         this.apiKey = '7314a190-3fd4-11ea-8f72-af685da1b20e';
     }
 
-    getKeywords(text, callbacks) {
+    public getKeywords(text, callbacks) {
         if (typeof callbacks == 'function') {
             callbacks = this.wrapAsSuccessCallback(callbacks);
         }
         return this.getKeywordsForText(text, callbacks);
     };
 
-    getKeywordsForText (params, callbacks) {
+    private getKeywordsForText (params, callbacks) {
         if (typeof params == 'string') {
             params = {body: params}
         } else if (typeof params.text != 'undefined') {
@@ -28,7 +28,7 @@ export class ExtractKeywords {
         return this.post("text/keywords", params, callbacks);
     };
 
-    sendRequest(url, type, params, callbacks) {
+    private sendRequest(url, type, params, callbacks) {
         // Prepend API server to request URL
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
@@ -78,7 +78,7 @@ export class ExtractKeywords {
         }
     }
 
-    post(url, params, callbacks) {
+    private post(url, params, callbacks) {
         // Add default retina_name parameter if needed
         if (params && typeof params.retina_name == 'undefined') {
             params.retina_name = "en_associative";
@@ -88,7 +88,7 @@ export class ExtractKeywords {
         return this.sendRequest(url, "POST", JSON.stringify(params.body), callbacks);
     }
 
-    constructUrl(url, params) {
+    private constructUrl(url, params) {
         // Append params to URL
         var first = true;
         for (var key in params) {
@@ -110,7 +110,7 @@ export class ExtractKeywords {
         return url;
     }
 
-    wrapAsSuccessCallback(callback) {
+    private wrapAsSuccessCallback(callback) {
         return {success: callback};
     }
 }

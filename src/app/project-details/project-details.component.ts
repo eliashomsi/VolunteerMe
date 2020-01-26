@@ -4,6 +4,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import {ExtractKeywords} from '../core/extractKeywords.service';
 
 
 @Component({
@@ -19,8 +20,10 @@ export class ProjectDetailsComponent  {
   public projectsRef: AngularFireList<ProjectModel>;
   public db: AngularFireDatabase;
   public tags: string[];
+  public extractor: ExtractKeywords;
   constructor(private fb: FormBuilder) {
     this.createForm();
+    this.extractor = new ExtractKeywords();
    }
 
    createForm() {
@@ -35,15 +38,21 @@ export class ProjectDetailsComponent  {
       phoneNumber:['',Validators.required]
     });
   }
+
   addProject(value){
     value.tag = this.tag;
     console.log(value);
 
   }
+
   addtag(value){
-   
     this.tag.push(value.tag)
     console.log(this.tag);
   }
 
+  predictTags(event) {
+    var smartTags = [];
+    this.extractor.getKeywords(event.target.value, result => smartTags=result);
+    this.tag = this.tag.concat(smartTags);
+  }
 }
