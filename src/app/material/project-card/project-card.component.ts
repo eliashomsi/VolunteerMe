@@ -25,7 +25,7 @@ export class ProjectCardComponent implements OnInit {
 
   deleteProject() {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      data: { title: this.item.title }
+      data: { title: this.item.title, operation: 'delete' }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -37,14 +37,23 @@ export class ProjectCardComponent implements OnInit {
 
   enrollUser() {
     if (this.item.numberOfVolunteers != 0) {
-      let model = new EnrollmentModel();
-      model.projectKey = this.item.key;
-      if (this.user) {
-        model.volunteerEmail = this.user.email;
-      }
+      const dialogRef = this.dialog.open(DeleteDialogComponent, {
+        data: { title: this.item.title, operation: 'attend' }
+      });
 
-      this.projectsRef.update(this.item.key, { numberOfVolunteers: this.item.numberOfVolunteers - 1 });
-      this.enrollmentsRef.push(model);
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          let model = new EnrollmentModel();
+          model.projectKey = this.item.key;
+          if (this.user) {
+            model.volunteerEmail = this.user.email;
+          }
+
+          this.projectsRef.update(this.item.key, { numberOfVolunteers: this.item.numberOfVolunteers - 1 });
+          this.enrollmentsRef.push(model);
+        }
+      });
+      
     } else {
       alert('This project is already at full capacity');
     }
