@@ -1,3 +1,4 @@
+import {} from 'google-maps';
 import { Component } from '@angular/core';
 
 // models
@@ -6,6 +7,7 @@ import { EnrollmentModel } from './core/enrollment.model';
 
 // firebase
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+
 
 @Component({
   selector: 'app-root',

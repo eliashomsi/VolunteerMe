@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// import {} from 'googlemaps';
+
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { UserService } from 'src/app/core/user.service';
 import { AuthService } from 'src/app/core/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,11 +14,14 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
 
   FilterTags = ['java', 'nancy', 'jquery'];
+
+  @ViewChild('mapElement', { static: false }) mapElement: any;
+  map: google.maps.Map;
 
   constructor(
     public userService: UserService,
@@ -37,10 +42,21 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    setTimeout(() => {
+      const mapProperties = {
+        center: new google.maps.LatLng(35.2271, -80.8431),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
+    }, 3000);
+  }
+
   getUser() {
     this.userService.getCurrentUser()
       .then(user => {
-        this.user = user.providerData[0];        
+        this.user = user.providerData[0];
       }, err => {
         console.error(err);
       });
