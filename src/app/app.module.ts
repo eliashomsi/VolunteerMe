@@ -37,7 +37,8 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { ProjectsCreatedComponent } from './user/projects-created/projects-created.component';
 import { ProjectsSignedUpForComponent } from './user/projects-signed-up-for/projects-signed-up-for.component';
 import { ProjectCardComponent } from './material/project-card/project-card.component';
-import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component'
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { MapComponent } from './user/map/map.component'
 
 @NgModule({
   imports: [
@@ -65,7 +66,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component'
     ProjectsCreatedComponent,
     ProjectsSignedUpForComponent,
     ProjectCardComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    MapComponent
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent],

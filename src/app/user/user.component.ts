@@ -31,6 +31,10 @@ export class UserComponent implements OnInit {
       label: 'Signed projects',
       path: './projects-signed-up-for',
       index: 2
+    },  {
+      label: 'Projects locations',
+      path: './map',
+      index: 3
     },
   ];
 
