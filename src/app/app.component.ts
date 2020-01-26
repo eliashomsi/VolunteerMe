@@ -21,7 +21,7 @@ export class AppComponent {
     
     let styles = {
       'background-image': this.backgroundURL[Math.floor(Math.random() * Math.floor(5))],
-      // Math.floor(Math.random() * Math.floor(5))
+
     };
     return styles;
   }
