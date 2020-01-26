@@ -9,3 +9,10 @@ This application is user friendly and easy to learn. It allows users to register
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This service provides organizations with volunteers who are interested in volunteering with them and allows the volunteers to actively contribute to the society by doing something they are interested in. 
 
 
+## How to run
+```
+git clone
+cd project
+npm i
+npm run startme
+```
