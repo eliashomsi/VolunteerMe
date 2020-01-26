@@ -1,40 +1,36 @@
-<div class="d-flex flex-grow-1 justify-content-end">
-    <button *ngIf="!editState" mat-button (click)="logout()" matTooltip="Log out">
+<div id="background" style="width: 100%; height: 50%; background-color: #E6CED0;">
+    <div class="d-flex flex-grow-1 justify-content-end">
+        <button *ngIf="!editState" mat-button (click)="logout()" matTooltip="Log out">
     <mat-icon>
       exit_to_app
     </mat-icon>
   </button>
-    <button mat-button (click)="openDialog(user)" matTooltip="Edit">
+        <button mat-button (click)="openDialog(user)" matTooltip="Edit">
     <mat-icon>
       edit
     </mat-icon>
   </button>
+    </div>
+
+    <div class="col-xs-12 col-sm-4 text-center" style="float: left;">
+        <figure>
+            <img *ngIf="!user.photoURL" src="../../assets/user-male-icon.png" alt="">
+            <img *ngIf="user.photoURL" [src]="user.photoURL" alt="profile pict" class="img-circle img-responsive" style="border-radius: 50%; width: 300px; height: 300px; margin: 30px;">
+        </figure>
+    </div>
+
+    <div class="col-xs-12 col-sm-8" style=" float: left; border-radius: 0%;  height:200px; margin: auto; color: black;">
+        <h2 style="color: black; font-size: 30px; letter-spacing: 3px;">{{ user.displayName }}</h2>
+        <p style="color: black; font-size: 20px;"><strong style="color: black; font-size: 20px;">About: </strong> Web Designer / UI. </p>
+        <p style="color: black; font-size: 20px;"><strong style="color: black; font-size: 20px;">Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+        <p class="d-flex flex-row flex-wrap align-items-center">
+            <strong class="mr-1" style="color: black; font-size: 20px;">Skills: </strong>
+            <mat-chip-list>
+                <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}}</mat-chip>
+            </mat-chip-list>
+        </p>
+    </div>
+
+
+
 </div>
-
-<div class=" d-flex flex-grow-1">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-            <div class="well profile">
-                <div class="col-sm-12">
-                    <div class="col-xs-12 col-sm-8">
-                        <h2>{{ user.displayName }}</h2>
-                        <p><strong>About: </strong> Web Designer / UI. </p>
-                        <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-
-                        <p class="d-flex flex-row flex-wrap align-items-center">
-                            <strong class="mr-1">Skills: </strong>
-                            <mat-chip-list>
-                                <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}}</mat-chip>
-                            </mat-chip-list>
-                        </p>
-
-                    </div>
-                    <div class="col-xs-12 col-sm-4 text-center">
-                        <figure>
-                            <img *ngIf="!user.photoURL" src="../../assets/user-male-icon.png" alt="" class="img-circle img-responsive">
-                            <img *ngIf="user.photoURL" [src]="user.photoURL" alt="profile pict" class="img-circle img-responsive">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>

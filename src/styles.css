@@ -10,8 +10,8 @@
 
 body {
     margin: 0;
-    background-color: #ccedd2;
-    background-image: url('back.jpeg');
+    background-color: #E6CED0;
+    /*background-image: url('back.jpeg');*/
     height: 60px;
 }
 
@@ -41,6 +41,7 @@ h1,
 h2 {
     font-weight: lighter;
     font-family: 'Anton', sans-serif;
+    text-align: center;
 }
 
 p {
