@@ -67,3 +67,78 @@
     at Timer.processTimers (timers.js:223:10)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2020-01-26T16:18:51.387Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:18:51.390Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2020-01-26T16:18:51.390Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:18:51.390Z] Platform:      linux
+[debug] [2020-01-26T16:18:51.390Z] Node Version:  v10.18.0
+[debug] [2020-01-26T16:18:51.391Z] Time:          Sun Jan 26 2020 11:18:51 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:18:51.391Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:18:51.391Z] 
+[error] 
+[error] Error: No project active. Run with --project <projectId> or define an alias by
+running firebase use --add
+[debug] [2020-01-26T16:18:51.666Z] Error: ENOENT: no such file or directory, unlink '/mnt/c/Users/it-el/source/repos/VolunteerMe/firebase-debug.log'
+    at Object.unlinkSync (fs.js:956:3)
+    at process.<anonymous> (/usr/lib/node_modules/firebase-tools/lib/bin/firebase.js:68:12)
+    at process.emit (events.js:203:15)
+    at process.exit (internal/process/per_thread.js:168:15)
+    at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/errorOut.js:19:17)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-01-26T16:19:08.254Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:19:08.256Z] Command:       /usr/bin/node /usr/bin/firebase init
+[debug] [2020-01-26T16:19:08.256Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:19:08.256Z] Platform:      linux
+[debug] [2020-01-26T16:19:08.256Z] Node Version:  v10.18.0
+[debug] [2020-01-26T16:19:08.257Z] Time:          Sun Jan 26 2020 11:19:08 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:19:08.257Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:19:08.257Z] 
+[debug] [2020-01-26T16:19:08.265Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-26T16:19:08.265Z] > attempting to authenticate via app default credentials
+[debug] [2020-01-26T16:19:08.313Z] ! auto-auth error: Could not load the default credentials. Browse to https://developers.google.com/accounts/docs/application-default-credentials for more information.
+[debug] [2020-01-26T16:19:08.314Z] > no credentials could be found or automatically retrieved
+[error] 
+[error] Error: Command requires authentication, please run firebase login
+[debug] [2020-01-26T16:19:08.575Z] Error: ENOENT: no such file or directory, unlink '/mnt/c/Users/it-el/source/repos/VolunteerMe/firebase-debug.log'
+    at Object.unlinkSync (fs.js:956:3)
+    at process.<anonymous> (/usr/lib/node_modules/firebase-tools/lib/bin/firebase.js:68:12)
+    at process.emit (events.js:203:15)
+    at process.exit (internal/process/per_thread.js:168:15)
+    at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/errorOut.js:19:17)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2020-01-26T16:22:02.306Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:22:02.309Z] Command:       /usr/bin/node /usr/bin/firebase init
+[debug] [2020-01-26T16:22:02.309Z] CLI Version:   7.12.1
+[debug] [2020-01-26T16:22:02.309Z] Platform:      linux
+[debug] [2020-01-26T16:22:02.309Z] Node Version:  v10.18.0
+[debug] [2020-01-26T16:22:02.310Z] Time:          Sun Jan 26 2020 11:22:02 GMT-0500 (Eastern Standard Time)
+[debug] [2020-01-26T16:22:02.310Z] ----------------------------------------------------------------------
+[debug] [2020-01-26T16:22:02.310Z] 
+[debug] [2020-01-26T16:22:02.318Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-26T16:22:02.318Z] > attempting to authenticate via app default credentials
+[debug] [2020-01-26T16:22:02.367Z] ! auto-auth error: Could not load the default credentials. Browse to https://developers.google.com/accounts/docs/application-default-credentials for more information.
+[debug] [2020-01-26T16:22:02.367Z] > no credentials could be found or automatically retrieved
+[error] 
+[error] Error: Command requires authentication, please run firebase login
+[debug] [2020-01-26T16:22:02.628Z] Error: ENOENT: no such file or directory, unlink '/mnt/c/Users/it-el/source/repos/VolunteerMe/firebase-debug.log'
+    at Object.unlinkSync (fs.js:956:3)
+    at process.<anonymous> (/usr/lib/node_modules/firebase-tools/lib/bin/firebase.js:68:12)
+    at process.emit (events.js:203:15)
+    at process.exit (internal/process/per_thread.js:168:15)
+    at Timeout._onTimeout (/usr/lib/node_modules/firebase-tools/lib/errorOut.js:19:17)
+    at ontimeout (timers.js:436:11)
+    at tryOnTimeout (timers.js:300:5)
+    at listOnTimeout (timers.js:263:5)
+    at Timer.processTimers (timers.js:223:10)
+[error] 
+[error] Error: An unexpected error has occurred.
