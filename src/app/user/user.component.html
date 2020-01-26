@@ -28,13 +28,13 @@
             <p><strong>About: </strong> Web Designer / UI. </p>
             <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
 
-            <p class="d-flex flex-row flex-wrap">
-              <strong>Skills: </strong>
-              <span class="tag1 m-1">java</span>
-              <span class="tags m-1">nancy</span>
-              <span class="tags m-1">jquery</span>
-              <span class="tags m-1">bootstrap3</span>
+            <p class="d-flex flex-row flex-wrap align-items-center">
+              <strong class="mr-1">Skills: </strong>              
+              <mat-chip-list>
+                <mat-chip *ngFor="let tagMe of FilterTags">{{tagMe}}</mat-chip>
+              </mat-chip-list>
             </p>
+              
           </div>
           <div class="col-xs-12 col-sm-4 text-center">
             <figure>
